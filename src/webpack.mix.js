@@ -3,7 +3,8 @@ const tailwindcss = require('tailwindcss')
 
 require('laravel-mix-purgecss')
 
-mix.js('resources/js/app.js', 'public/js')
+mix.js('resources/js/modules/pages/register.js', 'public/js/pages')
+	.js('resources/js/app.js', 'public/js')
 	.extract()
 
 mix.sass('resources/sass/app.scss', 'public/css')
