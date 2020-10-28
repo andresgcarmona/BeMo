@@ -17,7 +17,7 @@ body {
 .hero-image {
   background: url(/images/cda-interview-guide.jpg) no-repeat center center;
   background-size: cover;
-  max-height: 53rem;
+  min-height: 53rem;
 
   > p {
     &:after {

@@ -2,7 +2,9 @@
 
     namespace App\Http\Controllers;
 
-    class HomeController extends Controller
+    use Illuminate\Contracts\Support\Renderable;
+
+    class DashboardController extends Controller
     {
         /**
          * Create a new controller instance.
@@ -17,10 +19,10 @@
         /**
          * Show the application dashboard.
          *
-         * @return \Illuminate\Contracts\Support\Renderable
+         * @return Renderable
          */
-        public function index()
+        public function index(): Renderable
         {
-            return view('home');
+            return view('dashboard');
         }
     }
