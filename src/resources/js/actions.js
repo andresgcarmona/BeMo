@@ -1,4 +1,4 @@
-import { toggleNoIndex as toggleIndexing } from './api'
+import { toggleNoIndex as toggleIndexing, saveSettings } from './api'
 
 const toggleNoIndex = async ({ commit }, page) => {
 	try {
@@ -11,6 +11,18 @@ const toggleNoIndex = async ({ commit }, page) => {
 	}
 }
 
+const updateSettings = async ({ commit }, page) => {
+	try {
+		const response = await saveSettings(page)
+		
+		return response.data
+	}
+	catch(e) {
+		console.error(e)
+	}
+}
+
 export default {
 	toggleNoIndex,
+	updateSettings,
 }

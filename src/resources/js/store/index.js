@@ -8,6 +8,10 @@ Vue.use(Vuex)
 
 const state = {
 	pages: [],
+	settings: {
+		gat: null,
+		fpx: null,
+	},
 }
 
 export default new Vuex.Store({

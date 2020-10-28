@@ -1979,7 +1979,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 response = _context.sent;
                 _this.savingNoIndex = false;
 
-                if (!response.error) {
+                if (!(response.status === 'error')) {
                   _context.next = 8;
                   break;
                 }
@@ -2009,7 +2009,73 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_PagesTable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/PagesTable */ "./resources/js/components/PagesTable.vue");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_PagesTable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/PagesTable */ "./resources/js/components/PagesTable.vue");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2037,11 +2103,55 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'DashboardPage',
   components: {
-    PagesTable: _components_PagesTable__WEBPACK_IMPORTED_MODULE_0__["default"]
-  }
+    PagesTable: _components_PagesTable__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
+  data: function data() {
+    return {
+      savingSettings: false
+    };
+  },
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_2__["mapGetters"])(['settings'])),
+  methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_2__["mapActions"])({
+    saveSettings: 'updateSettings'
+  })), {}, {
+    updateSettings: function updateSettings() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var response;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _this.savingSettings = true;
+                _context.next = 3;
+                return _this.saveSettings(_this.settings);
+
+              case 3:
+                response = _context.sent;
+                _this.savingSettings = true;
+
+                if (!(response.status === 'error')) {
+                  _context.next = 8;
+                  break;
+                }
+
+                console.error(response.error);
+                return _context.abrupt("return", false);
+
+              case 8:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    }
+  })
 });
 
 /***/ }),
@@ -3500,20 +3610,132 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "dashboard-container w-full" },
-    [
+  return _c("div", { staticClass: "dashboard-container w-full" }, [
+    _c("div", { staticClass: "w-full" }, [
       _c("h2", { staticClass: "text-3xl\tfont-semibold text-gray-700 mb-8" }, [
-        _vm._v("Registered Pages")
+        _vm._v("Global Settings")
       ]),
       _vm._v(" "),
-      _vm._m(0),
-      _vm._v(" "),
-      _c("pages-table")
-    ],
-    1
-  )
+      _c("div", { staticClass: "mb-4 flex flex-col w-full" }, [
+        _c("div", { staticClass: "w-full flex" }, [
+          _c("div", { staticClass: "mb-4 w-1/4 mr-3" }, [
+            _c(
+              "label",
+              {
+                staticClass: "block text-gray-700 text-sm font-bold mb-2",
+                attrs: { for: "google_analytics_tag" }
+              },
+              [_vm._v("\n            Google analytics tag\n          ")]
+            ),
+            _vm._v(" "),
+            _c("textarea", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.settings.gat,
+                  expression: "settings.gat"
+                }
+              ],
+              staticClass:
+                "appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white",
+              attrs: {
+                name: "google_analytics_tag",
+                id: "google_analytics_tag",
+                placeholder: "Google Analytics tag",
+                rows: "5",
+                cols: "5"
+              },
+              domProps: { value: _vm.settings.gat },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.settings, "gat", $event.target.value)
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "mb-4 w-1/4" }, [
+            _c(
+              "label",
+              {
+                staticClass: "block text-gray-700 text-sm font-bold mb-2",
+                attrs: { for: "facebook_pixel_data" }
+              },
+              [_vm._v("\n            Facebook pixel data\n          ")]
+            ),
+            _vm._v(" "),
+            _c("textarea", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.settings.fpx,
+                  expression: "settings.fpx"
+                }
+              ],
+              staticClass:
+                "appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white",
+              attrs: {
+                name: "facebook_pixel_data",
+                id: "facebook_pixel_data",
+                placeholder: "Facebook pixel data",
+                rows: "5",
+                cols: "5"
+              },
+              domProps: { value: _vm.settings.fpx },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.settings, "fpx", $event.target.value)
+                }
+              }
+            })
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "w-auto" }, [
+          _c(
+            "button",
+            {
+              staticClass:
+                "appearance-none block mb-3 mr-2 sm:mb-0 border border-gray-600 p-3 font-medium text-sm font rounded hover:text-white hover:bg-gray-600 hover:border-gray-700 transition-colors duration-100",
+              attrs: { type: "button", disabled: _vm.savingSettings },
+              on: { click: _vm.updateSettings }
+            },
+            [
+              _c("i", { staticClass: "fas fa-save inline-block mr-2" }),
+              _vm._v(" Update settings\n        ")
+            ]
+          )
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c("hr"),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "w-full" },
+      [
+        _c(
+          "h2",
+          { staticClass: "text-3xl\tfont-semibold text-gray-700 mb-8" },
+          [_vm._v("Registered Pages")]
+        ),
+        _vm._v(" "),
+        _vm._m(0),
+        _vm._v(" "),
+        _c("pages-table")
+      ],
+      1
+    )
+  ])
 }
 var staticRenderFns = [
   function() {
@@ -20111,8 +20333,43 @@ var toggleNoIndex = /*#__PURE__*/function () {
   };
 }();
 
+var updateSettings = /*#__PURE__*/function () {
+  var _ref4 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(_ref3, page) {
+    var commit, response;
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            commit = _ref3.commit;
+            _context2.prev = 1;
+            _context2.next = 4;
+            return Object(_api__WEBPACK_IMPORTED_MODULE_1__["saveSettings"])(page);
+
+          case 4:
+            response = _context2.sent;
+            return _context2.abrupt("return", response.data);
+
+          case 8:
+            _context2.prev = 8;
+            _context2.t0 = _context2["catch"](1);
+            console.error(_context2.t0);
+
+          case 11:
+          case "end":
+            return _context2.stop();
+        }
+      }
+    }, _callee2, null, [[1, 8]]);
+  }));
+
+  return function updateSettings(_x3, _x4) {
+    return _ref4.apply(this, arguments);
+  };
+}();
+
 /* harmony default export */ __webpack_exports__["default"] = ({
-  toggleNoIndex: toggleNoIndex
+  toggleNoIndex: toggleNoIndex,
+  updateSettings: updateSettings
 });
 
 /***/ }),
@@ -20121,17 +20378,24 @@ var toggleNoIndex = /*#__PURE__*/function () {
 /*!*****************************!*\
   !*** ./resources/js/api.js ***!
   \*****************************/
-/*! exports provided: toggleNoIndex */
+/*! exports provided: toggleNoIndex, saveSettings */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "toggleNoIndex", function() { return toggleNoIndex; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "saveSettings", function() { return saveSettings; });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
@@ -20167,6 +20431,37 @@ var toggleNoIndex = /*#__PURE__*/function () {
 
   return function toggleNoIndex(_x) {
     return _ref.apply(this, arguments);
+  };
+}();
+
+var saveSettings = /*#__PURE__*/function () {
+  var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(settings) {
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            _context2.prev = 0;
+            _context2.next = 3;
+            return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("/settings", _objectSpread({}, settings));
+
+          case 3:
+            return _context2.abrupt("return", _context2.sent);
+
+          case 6:
+            _context2.prev = 6;
+            _context2.t0 = _context2["catch"](0);
+            throw _context2.t0;
+
+          case 9:
+          case "end":
+            return _context2.stop();
+        }
+      }
+    }, _callee2, null, [[0, 6]]);
+  }));
+
+  return function saveSettings(_x2) {
+    return _ref2.apply(this, arguments);
   };
 }();
 
@@ -20343,8 +20638,13 @@ var pages = function pages(state) {
   return state.pages;
 };
 
+var settings = function settings(state) {
+  return state.settings;
+};
+
 /* harmony default export */ __webpack_exports__["default"] = ({
-  pages: pages
+  pages: pages,
+  settings: settings
 });
 
 /***/ }),
@@ -20358,12 +20658,32 @@ var pages = function pages(state) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var SET_PAGES = function SET_PAGES(state, pages) {
   state.pages = pages;
 };
 
+var SET_GAT = function SET_GAT(state, payload) {
+  state.settings = _objectSpread(_objectSpread({}, state.settings), {}, {
+    gat: payload.gat
+  });
+};
+
+var SET_FPX = function SET_FPX(state, payload) {
+  state.settings = _objectSpread(_objectSpread({}, state.settings), {}, {
+    fpx: payload.fpx
+  });
+};
+
 /* harmony default export */ __webpack_exports__["default"] = ({
-  SET_PAGES: SET_PAGES
+  SET_PAGES: SET_PAGES,
+  SET_FPX: SET_FPX,
+  SET_GAT: SET_GAT
 });
 
 /***/ }),
@@ -20492,7 +20812,11 @@ __webpack_require__.r(__webpack_exports__);
 
 vue__WEBPACK_IMPORTED_MODULE_1___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_0__["default"]);
 var state = {
-  pages: []
+  pages: [],
+  settings: {
+    gat: null,
+    fpx: null
+  }
 };
 /* harmony default export */ __webpack_exports__["default"] = (new vuex__WEBPACK_IMPORTED_MODULE_0__["default"].Store({
   state: state,

@@ -30,12 +30,15 @@ vue__WEBPACK_IMPORTED_MODULE_1___default.a.config.productionTip = false;
 new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
   store: _store__WEBPACK_IMPORTED_MODULE_2__["default"],
   router: _router__WEBPACK_IMPORTED_MODULE_3__["default"],
-  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_4__["mapMutations"])(['SET_PAGES'])),
+  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_4__["mapMutations"])(['SET_PAGES', 'SET_GAT', 'SET_FPX'])),
   mounted: function mounted() {
-    if (window.pages) {
-      this['SET_PAGES'](window.pages);
-      delete window.pages;
-    }
+    this['SET_PAGES'](window.pages);
+    this['SET_GAT']({
+      gat: window.settings.google_analytics_tag
+    });
+    this['SET_FPX']({
+      fpx: window.settings.facebook_pixel_data
+    });
   }
 }).$mount('.app');
 

@@ -9,6 +9,18 @@ const toggleNoIndex = async (page) => {
 	}
 }
 
+const saveSettings = async (settings) => {
+	try {
+		return await axios.post(`/settings`, {
+			...settings
+		})
+	}
+	catch(e) {
+		throw e
+	}
+}
+
 export {
 	toggleNoIndex,
+	saveSettings,
 }

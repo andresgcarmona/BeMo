@@ -3,6 +3,7 @@
     namespace App\Http\Controllers;
 
     use App\Models\Page;
+    use App\Models\Settings;
     use Illuminate\Contracts\Support\Renderable;
     use JavaScript;
 
@@ -29,7 +30,12 @@
                          ->orderBy('created_at', 'desc')
                          ->get();
 
-            JavaScript::put(compact('pages'));
+            $settings = Settings::first();
+
+            JavaScript::put(compact(
+                'pages',
+                'settings',
+            ));
 
             return view('dashboard', compact(
                 'pages'

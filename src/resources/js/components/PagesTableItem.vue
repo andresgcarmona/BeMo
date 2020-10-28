@@ -67,7 +67,7 @@
   
         this.savingNoIndex = false
         
-        if(response.error) {
+        if(response.status === 'error') {
           console.error(response.error)
           return false
         }
