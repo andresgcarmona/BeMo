@@ -4,28 +4,20 @@
     use Illuminate\Database\Schema\Blueprint;
     use Illuminate\Support\Facades\Schema;
 
-    class CreatePagesTable extends Migration
+    class CreateSettingsTable extends Migration
     {
         /**
          * Run the migrations.
          *
          * @return void
          */
-        public function up()
+        public function up(): void
         {
-            Schema::create('pages', function (Blueprint $table)
+            Schema::create('settings', function (Blueprint $table)
             {
                 $table->id();
-                $table->foreignId('user_id')->constrained('users');
-                $table->mediumText('title');
-                $table->mediumText('slug');
-                $table->mediumText('description');
-                $table->mediumText('cover_image')->nullable();
-                $table->longText('body');
-                $table->boolean('no-index')->default(true);
                 $table->mediumText('google_analytics_tag')->nullable();
                 $table->mediumText('facebook_pixel_data')->nullable();
-                $table->timestamp('published_at')->nullable();
                 $table->timestamps();
                 $table->softDeletes();
             });
@@ -36,8 +28,8 @@
          *
          * @return void
          */
-        public function down()
+        public function down(): void
         {
-            Schema::dropIfExists('pages');
+            Schema::dropIfExists('settings');
         }
     }

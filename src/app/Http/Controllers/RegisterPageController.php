@@ -3,6 +3,7 @@
     namespace App\Http\Controllers;
 
     use App\Models\Page;
+    use App\Models\Settings;
     use Illuminate\Auth\Access\AuthorizationException;
     use Illuminate\Contracts\Foundation\Application;
     use Illuminate\Contracts\View\Factory;
@@ -28,6 +29,8 @@
         {
             $this->authorize('register', Page::class);
 
-            return view('pages.register');
+            $settings = Settings::first();
+
+            return view('pages.register', compact('settings'));
         }
     }

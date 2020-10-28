@@ -45,8 +45,6 @@
             } catch (Exception $exception) {
                 DB::rollBack();
 
-                dd($exception->getMessage());
-
                 return redirect()->back()
                                  ->withInput()
                                  ->withErrors(['error' => $exception->getMessage()]);
