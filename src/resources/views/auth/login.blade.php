@@ -24,7 +24,7 @@
 
                             <div class="col-md-6">
                                 <input id="email" type="email"
-                                       class="($errors->has('email') ? 'border-red-500  ' : '') . 'appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                                       class="{{ ($errors->has('email') ? 'border-red-500  ' : '') }} 'appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
                                        name="email"
                                        value="{{ old('email') }}"
                                        required
@@ -46,7 +46,7 @@
 
                             <div class="col-md-6">
                                 <input id="password" type="password"
-                                       class="($errors->has('password') ? 'border-red-500  ' : '') . 'appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                                       class="{{ ($errors->has('password') ? 'border-red-500  ' : '') }} 'appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
                                        name="password"
                                        required
                                        autocomplete="current-password">
