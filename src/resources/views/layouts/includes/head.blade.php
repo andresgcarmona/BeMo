@@ -8,7 +8,7 @@
 <script src="{{ asset('js/app.js') }}" defer></script>
 
 <link rel="dns-prefetch" href="//fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,500&display=swap" rel="stylesheet">
 
 @yield('head')
 
