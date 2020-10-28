@@ -4,6 +4,7 @@
 
     use App\Models\Page;
     use Illuminate\Database\Eloquent\Factories\Factory;
+    use Illuminate\Support\Str;
 
     class PageFactory extends Factory
     {
@@ -21,9 +22,12 @@
          */
         public function definition(): array
         {
+            $title = $this->faker->sentence;
+
             return [
                 'user_id'      => 1,
-                'title'        => $this->faker->sentences(3, true),
+                'title'        => $title,
+                'slug'         => Str::slug($title),
                 'description'  => $this->faker->sentences(5, true),
                 'body'         => $this->faker->paragraphs(10, true),
                 'published_at' => now(),

@@ -7,12 +7,12 @@
 
     <div class="relative mt-32 sm:pt-0 z-0">
         <div class="container mx-auto py-8">
-            <h2 class="text-3xl	font-semibold text-gray-700 mb-8">Pages</h2>
+            <h2 class="text-3xl	font-semibold text-gray-700 mb-8">Registered Pages</h2>
             <div class="w-full mb-4">
                 <div class="sm:flex sm:justify-between mb-3">
-                    <a href="http://portal.localhost:8020/admin/articles/register"
+                    <a href="/page/register"
                        class="block mb-3 sm:mb-0 border border-gray-600 p-3 font-medium text-sm font rounded hover:text-white hover:bg-gray-600 hover:border-gray-700 transition-colors duration-100">
-                        <i aria-hidden="true" class="fas fa-plus-circle"></i> Register page</a>
+                        <i aria-hidden="true" class="fas fa-plus-circle"></i> Register a page</a>
 
                     <form method="GET" action="http://portal.localhost:8020/admin/articles" accept-charset="UTF-8"
                           class="flex flex-1 justify-end items-center text-right px-4 md:px-0">

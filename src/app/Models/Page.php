@@ -21,12 +21,24 @@
             'published_at',
         ];
 
+        protected $appends = [
+            'url',
+        ];
+
         /**
          * @return BelongsTo
          */
         public function user(): BelongsTo
         {
             return $this->belongsTo(User::class);
+        }
+
+        /**
+         * @return string
+         */
+        public function getUrlAttribute(): string
+        {
+            return route('page.show', $this->attributes['slug']);
         }
 
         /**

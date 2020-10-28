@@ -4,6 +4,7 @@
 
     use App\Models\Page;
     use Illuminate\Contracts\Support\Renderable;
+    use JavaScript;
 
     class DashboardController extends Controller
     {
@@ -24,7 +25,11 @@
          */
         public function index(): Renderable
         {
-            $pages = Page::orderBy('created_at', 'desc')->paginate();
+            $pages = Page::with('user')
+                         ->take(10)
+                         ->get();
+
+            JavaScript::put(compact('pages'));
 
             return view('dashboard', compact(
                 'pages'

@@ -18,6 +18,7 @@
                 $table->id();
                 $table->foreignId('user_id')->constrained('users');
                 $table->mediumText('title');
+                $table->mediumText('slug');
                 $table->mediumText('description');
                 $table->mediumText('cover_image')->nullable();
                 $table->longText('body');
