@@ -15,7 +15,9 @@
         <input type="checkbox"
                :id="`switch_status_${page.id}`"
                :checked="page.no_index"
-               class="change-announcement-status custom-control-input">
+               class="change-announcement-status custom-control-input"
+               @change="toggleNoIndex"
+               :disabled="savingNoIndex">
         <label :for="`switch_status_${page.id}`"
                class="custom-control-label"></label>
       </div>
@@ -42,11 +44,36 @@
 </template>
 
 <script>
+  import { mapActions } from 'vuex'
+  
   export default {
     name: 'PagesTableItem',
     props: {
       page: Object,
       required: true,
+    },
+    data: () => ({
+      savingNoIndex: false,
+    }),
+    methods: {
+      ...mapActions({
+        toggleIndexing: 'toggleNoIndex',
+      }),
+      
+      async toggleNoIndex() {
+        this.savingNoIndex = true
+        
+        const response = await this.toggleIndexing(this.page)
+  
+        this.savingNoIndex = false
+        
+        if(response.error) {
+          console.error(response.error)
+          return false
+        }
+        
+        // Show tooltip.
+      },
     },
   }
 </script>
