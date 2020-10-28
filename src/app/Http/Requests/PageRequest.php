@@ -24,16 +24,16 @@
         public function rules(): array
         {
             return [
-                'title'                => 'required',
-                'description'          => 'required',
-                'page-trixFields.body' => 'required',
+                'title'                   => 'required',
+                'description'             => 'required',
+                'page-trixFields.content' => 'required',
             ];
         }
 
         public function messages()
         {
             return [
-                'page-trixFields.body.required' => 'The body of the page is required',
+                'page-trixFields.content.required' => 'The body of the page is required',
             ];
         }
     }

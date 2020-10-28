@@ -8,6 +8,8 @@
         @include('layouts.includes.header')
 
         <main class="app-main">
+            @include('layouts.includes.alerts')
+
             @yield('main')
         </main>
 

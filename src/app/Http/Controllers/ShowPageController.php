@@ -14,11 +14,12 @@
         /**
          * Handle the incoming request.
          *
+         * @param  Page  $page
          * @param  Request  $request
          * @return Application|Factory|View|Response
          */
         public function __invoke(Page $page, Request $request)
         {
-            return view('pages.show');
+            return view('pages.show', compact('page'));
         }
     }

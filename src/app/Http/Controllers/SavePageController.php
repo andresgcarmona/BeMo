@@ -26,18 +26,17 @@
         {
             $title       = $request->get('title');
             $description = $request->get('description');
-            $body        = $request->get('page-trixFields')['body'];
+            $body        = $request->get('page-trixFields')['content'];
 
             try {
                 DB::beginTransaction();
 
-                $page = Page::create([
-                    'user_id'     => auth()->user()->id,
-                    'title'       => $title,
+                $page = Page::create(array_merge($request->all(), [
                     'slug'        => Str::slug($title),
-                    'description' => $description,
                     'body'        => $body,
-                ]);
+                    'description' => $description,
+                    'user_id'     => auth()->user()->id,
+                ]));
 
                 DB::commit();
 
@@ -45,6 +44,8 @@
                                  ->with('success', __('Page created successfully.'));
             } catch (Exception $exception) {
                 DB::rollBack();
+
+                dd($exception->getMessage());
 
                 return redirect()->back()
                                  ->withInput()

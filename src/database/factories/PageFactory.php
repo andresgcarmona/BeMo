@@ -23,14 +23,15 @@
         public function definition(): array
         {
             $title = $this->faker->sentence;
+            $body  = $this->faker->paragraphs(10, true);
 
             return [
-                'user_id'      => 1,
-                'title'        => $title,
-                'slug'         => Str::slug($title),
-                'description'  => $this->faker->sentences(5, true),
-                'body'         => $this->faker->paragraphs(10, true),
-                'published_at' => now(),
+                'user_id'         => 1,
+                'title'           => $title,
+                'slug'            => Str::slug($title),
+                'description'     => $this->faker->sentences(5, true),
+                'body'            => $body,
+                'published_at'    => now(),
             ];
         }
     }

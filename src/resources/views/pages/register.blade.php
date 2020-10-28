@@ -59,7 +59,7 @@
                 <div class="mb-4">
                     <label for="description"
                            class="block text-gray-700 text-sm font-bold mb-2">Page content</label>
-                    @trix(\App\Models\Page::class, 'body')
+                    @trix(\App\Models\Page::class, 'content')
 
                     @error('page-trixFields.body')
                     <span class="invalid-feedback text-red-500 text-sm font-bold" role="alert">
