@@ -18,6 +18,7 @@
                 $table->id();
                 $table->mediumText('google_analytics_tag')->nullable();
                 $table->mediumText('facebook_pixel_data')->nullable();
+                $table->string('contact_email')->nullable();
                 $table->timestamps();
                 $table->softDeletes();
             });

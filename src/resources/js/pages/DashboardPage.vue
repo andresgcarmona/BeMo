@@ -47,7 +47,7 @@
       </div>
     </div>
   
-    <hr>
+    <hr class="my-5">
     
     <div class="w-full">
       <h2 class="text-3xl	font-semibold text-gray-700 mb-8">Registered Pages</h2>

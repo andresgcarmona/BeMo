@@ -3717,7 +3717,7 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _c("hr"),
+    _c("hr", { staticClass: "my-5" }),
     _vm._v(" "),
     _c(
       "div",

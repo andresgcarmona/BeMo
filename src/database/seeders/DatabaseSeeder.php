@@ -15,5 +15,7 @@
         public function run()
         {
             User::factory(10)->create();
+
+            $this->call(SettingsSeeder::class);
         }
     }
