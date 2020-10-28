@@ -1930,8 +1930,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'PagesTableItem',
   props: {
@@ -3339,16 +3337,11 @@ var render = function() {
       domProps: { textContent: _vm._s(_vm.page.published_at) }
     }),
     _vm._v(" "),
-    _c("td", { staticClass: "border px-4 py-2" }, [
+    _c("td", { staticClass: "border px-4 py-2 text-center" }, [
       _c("div", { staticClass: "custom-control custom-switch" }, [
         _c("input", {
           staticClass: "change-announcement-status custom-control-input",
-          attrs: {
-            type: "checkbox",
-            id: "switch_status_" + _vm.page.id,
-            "data-id": _vm.page.id,
-            "data-enabled": _vm.page.no_index
-          },
+          attrs: { type: "checkbox", id: "switch_status_" + _vm.page.id },
           domProps: { checked: _vm.page.no_index }
         }),
         _vm._v(" "),
@@ -3366,7 +3359,7 @@ var render = function() {
           {
             staticClass:
               "border border-r-0 hover:text-blue-500 text-gray-600 font-normal py-2 px-4 rounded-l rounded-l",
-            attrs: { target: "_blank", href: _vm.page.url }
+            attrs: { target: "_self", href: _vm.page.url }
           },
           [
             _c("i", {

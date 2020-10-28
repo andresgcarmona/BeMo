@@ -10,12 +10,10 @@
     <td class="border px-4 py-2" v-text="page.created_at"></td>
     <td class="border px-4 py-2" v-text="page.updated_at"></td>
     <td class="border px-4 py-2" v-text="page.published_at"></td>
-    <td class="border px-4 py-2">
+    <td class="border px-4 py-2 text-center">
       <div class="custom-control custom-switch">
         <input type="checkbox"
                :id="`switch_status_${page.id}`"
-               :data-id="page.id"
-               :data-enabled="page.no_index"
                :checked="page.no_index"
                class="change-announcement-status custom-control-input">
         <label :for="`switch_status_${page.id}`"
@@ -24,7 +22,7 @@
     </td>
     <td class="border px-4 py-2 text-center">
       <div class="inline-flex">
-        <a target="_blank"
+        <a target="_self"
            :href="page.url"
            class="border border-r-0 hover:text-blue-500 text-gray-600 font-normal py-2 px-4 rounded-l rounded-l">
           <i aria-hidden="true" class="far fa-eye"></i>

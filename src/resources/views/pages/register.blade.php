@@ -12,10 +12,28 @@
     <div class="relative mt-32 sm:pt-0 z-0">
         <div class="container mx-auto py-8">
             <form method="POST"
-              action="{{ route('page.store') }}"
-              class="w-full flex">
+                  action="{{ route('page.store') }}"
+                  class="w-full flex"
+                  enctype="multipart/form-data">
                 @csrf
                 <div class="w-full md:w-2/3 px-4">
+                    <div class="mb-4">
+                        <label for="cover_image"
+                               class="block text-gray-700 text-sm font-bold mb-2">Cover image</label>
+
+                        <input type="file"
+                               name="cover_image"
+                               id="cover_image"
+                               placeholder="Select an image"
+                               class="{{ ($errors->has('cover_image') ? 'border-red-500  ' : '') }} 'appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white">
+
+                        @error('cover_image')
+                        <span class="invalid-feedback text-red-500 text-sm font-bold" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+
                     <div class="mb-4">
                         <label for="title"
                                class="block text-gray-700 text-sm font-bold mb-2">Page title</label>

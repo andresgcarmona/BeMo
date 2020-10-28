@@ -31,12 +31,21 @@
             try {
                 DB::beginTransaction();
 
-                $page = Page::create(array_merge($request->all(), [
-                    'slug'        => Str::slug($title),
-                    'body'        => $body,
-                    'description' => $description,
-                    'user_id'     => auth()->user()->id,
-                ]));
+                $data = [
+                    'slug'                 => Str::slug($title),
+                    'body'                 => $body,
+                    'description'          => $description,
+                    'user_id'              => auth()->user()->id,
+                    'google_analytics_tag' => $request->get('google_analytics_tag', null),
+                    'facebook_pixel_data'  => $request->get('facebook_pixel_data', null),
+                ];
+
+                // Store cover if present.
+                if($request->hasFile('cover_image')) {
+                    $data['cover_image'] = $request->file('cover_image')->store('public/images', );
+                }
+
+                $page = Page::create(array_merge($request->all(), $data));
 
                 DB::commit();
 
