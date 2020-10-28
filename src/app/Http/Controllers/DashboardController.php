@@ -2,6 +2,7 @@
 
     namespace App\Http\Controllers;
 
+    use App\Models\Page;
     use Illuminate\Contracts\Support\Renderable;
 
     class DashboardController extends Controller
@@ -23,6 +24,10 @@
          */
         public function index(): Renderable
         {
-            return view('dashboard');
+            $pages = Page::orderBy('created_at', 'desc')->paginate();
+
+            return view('dashboard', compact(
+                'pages'
+            ));
         }
     }

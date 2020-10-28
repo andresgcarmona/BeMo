@@ -1,0 +1,39 @@
+@extends('layouts.app')
+
+@section('title', 'Instituto Nacional de Salud Pública')
+
+@section('main')
+    @include('layouts.includes.header')
+
+    <div class="relative mt-32 sm:pt-0 z-0">
+        <div class="container mx-auto py-8">
+            <h2 class="text-3xl	font-semibold text-gray-700 mb-8">Pages</h2>
+            <div class="w-full mb-4">
+                <div class="sm:flex sm:justify-between mb-3">
+                    <a href="http://portal.localhost:8020/admin/articles/register"
+                       class="block mb-3 sm:mb-0 border border-gray-600 p-3 font-medium text-sm font rounded hover:text-white hover:bg-gray-600 hover:border-gray-700 transition-colors duration-100">
+                        <i aria-hidden="true" class="fas fa-plus-circle"></i> Register page</a>
+
+                    <form method="GET" action="http://portal.localhost:8020/admin/articles" accept-charset="UTF-8"
+                          class="flex flex-1 justify-end items-center text-right px-4 md:px-0">
+                        <div class="block relative w-full">
+                            <input placeholder="{{ __('Search pages in title and content') }}"
+                                   name="s" type="text"
+                                   class="transition-fast border border-gray-600 font-medium text-sm font rounded w-full lg:w-2/4 p-3 focus:border-blue-400 rounded focus:outline-none">
+                            <button type="submit"
+                                    class="absolute inset-y-0 right-0 flex items-center p-3 text-gray-700 focus:outline-none">
+                                <i aria-hidden="true" class="fas fa-search"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <router-view></router-view>
+        </div>
+    </div>
+@endsection
+
+@section('scripts')
+    @parent
+    <script src="{{ mix('js/app.js') }}"></script>
+@endsection

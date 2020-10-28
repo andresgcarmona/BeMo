@@ -16,4 +16,6 @@
 
 @stack('styles')
 
+<script src="https://kit.fontawesome.com/67712e0e7d.js" crossorigin="anonymous"></script>
+
 @stack('head_scripts')
