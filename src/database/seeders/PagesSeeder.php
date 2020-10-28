@@ -2,18 +2,18 @@
 
     namespace Database\Seeders;
 
-    use App\Models\User;
+    use App\Models\Page;
     use Illuminate\Database\Seeder;
 
-    class DatabaseSeeder extends Seeder
+    class PagesSeeder extends Seeder
     {
         /**
-         * Seed the application's database.
+         * Run the database seeds.
          *
          * @return void
          */
         public function run()
         {
-            User::factory(10)->create();
+            Page::factory(50)->create();
         }
     }
