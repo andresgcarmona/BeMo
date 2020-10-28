@@ -22,7 +22,7 @@
                 $table->mediumText('description');
                 $table->mediumText('cover_image')->nullable();
                 $table->longText('body');
-                $table->boolean('no-index')->default(true);
+                $table->boolean('no_index')->default(true);
                 $table->mediumText('google_analytics_tag')->nullable();
                 $table->mediumText('facebook_pixel_data')->nullable();
                 $table->timestamp('published_at')->nullable();

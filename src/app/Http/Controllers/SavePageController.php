@@ -32,20 +32,24 @@
                 DB::beginTransaction();
 
                 $data = [
+                    'title'                => $title,
                     'slug'                 => Str::slug($title),
                     'body'                 => $body,
                     'description'          => $description,
                     'user_id'              => auth()->user()->id,
+                    'published_at'         => $request->has('is_published') ? now() : null,
+                    'no_index'             => $request->has('no_index'),
                     'google_analytics_tag' => $request->get('google_analytics_tag', null),
                     'facebook_pixel_data'  => $request->get('facebook_pixel_data', null),
                 ];
 
                 // Store cover if present.
-                if($request->hasFile('cover_image')) {
-                    $data['cover_image'] = $request->file('cover_image')->store('public/images', );
+                if ($request->hasFile('cover_image')) {
+                    $data['cover_image'] = $request->file('cover_image')->store('public/images',);
                 }
 
-                $page = Page::create(array_merge($request->all(), $data));
+                $page = Page::create(array_merge($request->only('page-trixFields', 'attachment-page-trixFields'),
+                    $data));
 
                 DB::commit();
 
@@ -54,9 +58,11 @@
             } catch (Exception $exception) {
                 DB::rollBack();
 
+                dd($exception->getMessage());
+
                 return redirect()->back()
                                  ->withInput()
-                                 ->withErrors(['error' => $exception->getMessage()]);
+                                 ->with('error', $exception->getMessage());
             }
         }
     }

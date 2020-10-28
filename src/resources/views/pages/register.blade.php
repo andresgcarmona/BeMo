@@ -13,10 +13,10 @@
         <div class="container mx-auto py-8">
             <form method="POST"
                   action="{{ route('page.store') }}"
-                  class="w-full flex"
+                  class="w-full flex flex-col lg:flex-row"
                   enctype="multipart/form-data">
                 @csrf
-                <div class="w-full md:w-2/3 px-4">
+                <div class="w-full lg:w-2/3 px-4">
                     <div class="mb-4">
                         <label for="cover_image"
                                class="block text-gray-700 text-sm font-bold mb-2">Cover image</label>
@@ -83,6 +83,28 @@
                         @enderror
                     </div>
 
+                    <div class="w-1/2 px-3 mb-5 flex items-center">
+                        <input type="checkbox"
+                               name="is_published"
+                               id="is_published"
+                               class="h-4 w-4">
+                        <label for="is_published"
+                        class="tracking-wide text-gray-700 text-base font-bold mb-0 ml-2 mt-1">
+                            Publish page?
+                        </label>
+                    </div>
+
+                    <div class="w-1/2 px-3 mb-5 flex items-center">
+                        <input type="checkbox"
+                               name="no_index"
+                               id="no_index"
+                               class="h-4 w-4">
+                        <label for="no_index"
+                        class="tracking-wide text-gray-700 text-base font-bold mb-0 ml-2 mt-1">
+                            Set no-index
+                        </label>
+                    </div>
+
                     <div class="mt-5 flex items-center justify-end">
                         <button type="submit"
                                 class="appearance-none block mb-3 mr-2 sm:mb-0 border border-gray-600 p-3 font-medium text-sm font rounded hover:text-white hover:bg-gray-600 hover:border-gray-700 transition-colors duration-100">
@@ -94,7 +116,7 @@
                         </button>
                     </div>
                 </div>
-                <div class="w-full md:w-1/3 px-4">
+                <div class="w-full lg:w-1/3 px-4">
                     <div class="mb-4">
                         <label for="google_analytics_tag"
                                class="block text-gray-700 text-sm font-bold mb-2">
