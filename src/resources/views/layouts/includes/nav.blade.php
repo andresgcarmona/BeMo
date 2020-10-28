@@ -7,7 +7,7 @@
         <a href="{{ route('index') }}" class="text-lg text-gray-700 mr-6">Main</a>
         <a href="#" class="text-lg text-gray-700 mr-6">How To Prepare</a>
         <a href="#" class="text-lg text-gray-700 mr-6">CDA Interview Questions</a>
-        <a href="{{ route('about') }}" class="text-lg text-gray-700 mr-6">Contact Us</a>
+        <a href="{{ route('contact') }}" class="text-lg text-gray-700 mr-6">Contact Us</a>
         @guest
         <a href="{{ route('login') }}" class="text-lg text-gray-700 mr-6">Login</a>
         @endguest

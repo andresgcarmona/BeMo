@@ -14,6 +14,7 @@
 
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('contact', ShowContactFormController::class)->name('contact');
+    Route::post('contact', ShowContactFormController::class)->name('contact.send');
 
     /**
      * Pages routes.
