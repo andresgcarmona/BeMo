@@ -3376,7 +3376,7 @@ var render = function() {
         "a",
         {
           staticClass: "text-blue-500 block mt-1",
-          attrs: { href: _vm.page.url, target: "_blank" }
+          attrs: { href: _vm.page.url, target: "_self" }
         },
         [_vm._v(_vm._s(_vm.page.title) + "\n    ")]
       )

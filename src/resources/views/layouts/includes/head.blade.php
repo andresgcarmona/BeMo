@@ -11,6 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,500&display=swap" rel="stylesheet">
 
 @yield('head')
+@yield('analytics')
 
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 

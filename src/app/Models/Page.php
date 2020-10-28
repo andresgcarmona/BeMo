@@ -52,4 +52,14 @@
         {
             return $this->attributes['published_at'] !== null;
         }
+
+        public function getGatAttribute()
+        {
+            return $this->attributes['google_analytics_tag'];
+        }
+
+        public function getFpxAttribute()
+        {
+            return $this->attributes['facebook_pixel_data'];
+        }
     }

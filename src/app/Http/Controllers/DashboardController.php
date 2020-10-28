@@ -27,7 +27,6 @@
         {
             $pages = Page::with('user')
                          ->orderBy('created_at', 'desc')
-                         ->take(10)
                          ->get();
 
             JavaScript::put(compact('pages'));

@@ -3,7 +3,7 @@
     <td class="border px-4 py-2" v-text="page.id"></td>
     <td class="border px-4 py-2">
       <a :href="page.url"
-         target="_blank"
+         target="_self"
          class="text-blue-500 block mt-1">{{ page.title }}
       </a>
     </td>
