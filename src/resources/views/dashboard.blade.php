@@ -5,7 +5,7 @@
 @section('main')
     @include('layouts.includes.header')
 
-    <div class="relative mt-32 sm:pt-0 z-0">
+    <div class="relative mt-32 sm:pt-0 z-0 min-h-screen">
         <div class="container mx-auto py-8">
             <router-view></router-view>
         </div>

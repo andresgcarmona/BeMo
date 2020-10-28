@@ -16,5 +16,4 @@
 
 @section('scripts')
     @parent
-    @mix('js/app.js')
 @endsection

@@ -29,3 +29,19 @@ body {
     }
   }
 }
+
+
+footer {
+  background: #000066;
+  color: white;
+
+  a {
+    &:link, &:visited {
+      color: #FF6600;
+    }
+
+    &:hover, &:active {
+      color: #909090;
+    }
+  }
+}

@@ -642,6 +642,19 @@ body {
   margin: 0px auto;
 }
 
+footer {
+  background: #000066;
+  color: white;
+}
+
+footer a:link, footer a:visited {
+  color: #FF6600;
+}
+
+footer a:hover, footer a:active {
+  color: #909090;
+}
+
 .login-contaner .logo {
   width: 150px;
 }
