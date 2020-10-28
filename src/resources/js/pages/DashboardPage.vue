@@ -16,11 +16,11 @@
                       placeholder="Google Analytics tag"
                       rows="5"
                       cols="5"
-                      v-model="settings.gat"
+                      v-model="settings.google_analytics_tag"
                       class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"></textarea>
           </div>
           
-          <div class="mb-4 w-1/4">
+          <div class="mb-4 w-1/4 mr-3">
             <label for="facebook_pixel_data"
                    class="block text-gray-700 text-sm font-bold mb-2">
               Facebook pixel data
@@ -31,8 +31,22 @@
                       placeholder="Facebook pixel data"
                       rows="5"
                       cols="5"
-                      v-model="settings.fpx"
+                      v-model="settings.facebook_pixel_data"
                       class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"></textarea>
+          </div>
+          
+          <div class="mb-4 w-1/4">
+            <label for="contact_email"
+                   class="block text-gray-700 text-sm font-bold mb-2">
+              Contact Email
+            </label>
+    
+            <input type="email"
+                   name="contact_email"
+                      id="contact_email"
+                      placeholder="email"
+                      v-model="settings.contact_email"
+                      class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white" />
           </div>
         </div>
         
@@ -78,7 +92,8 @@
 <script>
   import PagesTable from '../components/PagesTable'
   import { mapActions, mapGetters } from 'vuex'
-  
+  import { AlertManager } from '../components/utils/AlertManager'
+
   export default {
     name: 'DashboardPage',
     components: { PagesTable },
@@ -100,14 +115,14 @@
   
         const response = await this.saveSettings(this.settings)
         
-        this.savingSettings = true
+        this.savingSettings = false
         
         if(response.status === 'error') {
           console.error(response.error)
           return false
         }
         
-        // TODO: Show notification tooltip
+        AlertManager.success(response.message)
       },
     },
   }

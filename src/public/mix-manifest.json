@@ -1,7 +1,8 @@
 {
-    "/js/app.js": "/js/app.js?id=66a9f4c2600a37c6d70b",
+    "/js/app.js": "/js/app.js?id=373645f32a701a2672ab",
     "/js/manifest.js": "/js/manifest.js?id=41f053ba9a94d81b39f8",
     "/js/pages/register.js": "/js/pages/register.js?id=161203ccc5d62e51d865",
-    "/css/app.css": "/css/app.css?id=979250632c60d3e1bf15",
-    "/js/vendor.js": "/js/vendor.js?id=5a10d2978337a134648f"
+    "/css/app.css": "/css/app.css?id=40b7bdff03d2a961ba2d",
+    "/js/vendor.js": "/js/vendor.js?id=449d70b4f114bbd44042",
+    "/css/izitoast/iziToast.min.css": "/css/izitoast/iziToast.min.css?id=b2f7bdc3ed47f5956551"
 }

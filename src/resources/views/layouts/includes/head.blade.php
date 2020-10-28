@@ -14,6 +14,8 @@
 @yield('analytics')
 
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+<link href="{{ asset('css/izitoast/iziToast.min.css') }}" rel="stylesheet">
+
 
 @stack('styles')
 

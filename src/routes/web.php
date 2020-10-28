@@ -4,7 +4,7 @@
     use App\Http\Controllers\IndexController;
     use App\Http\Controllers\RegisterPageController;
     use App\Http\Controllers\SavePageController;
-    use App\Http\Controllers\ShowAboutController;
+    use App\Http\Controllers\ShowContactFormController;
     use App\Http\Controllers\ShowPageController;
     use Illuminate\Support\Facades\Route;
 
@@ -13,7 +13,7 @@
     Auth::routes();
 
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    Route::get('about', ShowAboutController::class)->name('about');
+    Route::get('contact', ShowContactFormController::class)->name('contact');
 
     /**
      * Pages routes.

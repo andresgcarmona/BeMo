@@ -13,6 +13,8 @@ mix.sass('resources/sass/app.scss', 'public/css')
 		postCss: [tailwindcss('tailwind.config.js')],
 	})
 
+mix.copy('node_modules/izitoast/dist/css/iziToast.min.css', 'public/css/izitoast')
+
 mix.webpackConfig(require('./webpack.config'))
 
 if(mix.inProduction()) {

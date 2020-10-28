@@ -10,11 +10,10 @@ new Vue({
 	store,
 	router,
 	methods: {
-		...mapMutations(['SET_PAGES', 'SET_GAT', 'SET_FPX']),
+		...mapMutations(['SET_PAGES', 'SET_SETTINGS', 'SET_CONTACT_EMAIL', 'SET_GAT', 'SET_FPX']),
 	},
 	mounted() {
 		this['SET_PAGES'](window.pages)
-		this['SET_GAT']({gat: window.settings.google_analytics_tag})
-		this['SET_FPX']({fpx: window.settings.facebook_pixel_data})
+		this['SET_SETTINGS'](window.settings)
 	},
 }).$mount('.app')

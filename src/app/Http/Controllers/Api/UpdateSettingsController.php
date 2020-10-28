@@ -19,15 +19,16 @@
         {
             $settings = Settings::first();
 
-            $settings->update([
-                'google_analytics_tag' => $request->get('gat'),
-                'facebook_pixel_data'  => $request->get('fpx'),
-            ]);
+            $settings->update($request->only([
+                'google_analytics_tag',
+                'facebook_pixel_data',
+                'contact_email',
+            ]));
 
             return response()->json([
-                'status'  => 'success',
-                'message' => __('Settings updated successfully.'),
-                'settins' => $settings->fresh(),
+                'status'   => 'success',
+                'message'  => __('Settings updated successfully.'),
+                'settings' => $settings->fresh(),
             ]);
         }
     }

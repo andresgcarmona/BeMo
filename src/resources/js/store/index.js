@@ -9,8 +9,9 @@ Vue.use(Vuex)
 const state = {
 	pages: [],
 	settings: {
-		gat: null,
-		fpx: null,
+		google_analytics_tag: null,
+		facebook_pixel_data: null,
+		contact_email: null,
 	},
 }
 

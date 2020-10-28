@@ -30,7 +30,6 @@ body {
   }
 }
 
-
 footer {
   background: #000066;
   color: white;
@@ -42,6 +41,20 @@ footer {
 
     &:hover, &:active {
       color: #909090;
+    }
+  }
+}
+
+.iziToast {
+  > .iziToast-body {
+    .iziToast-title {
+      font-size: 1.1rem !important;
+      margin-bottom: 6px;
+    }
+
+    .iziToast-message {
+      font-size: 1.1rem !important;
+      font-weight: bold;
     }
   }
 }

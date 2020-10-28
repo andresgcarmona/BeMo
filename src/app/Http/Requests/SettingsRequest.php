@@ -24,8 +24,9 @@
         public function rules(): array
         {
             return [
-                'gat' => 'required',
-                'fpx' => 'required',
+                'google_analytics_tag' => 'required',
+                'facebook_pixel_data'  => 'required',
+                'contact_email'        => 'required',
             ];
         }
     }

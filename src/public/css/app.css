@@ -655,6 +655,16 @@ footer a:hover, footer a:active {
   color: #909090;
 }
 
+.iziToast > .iziToast-body .iziToast-title {
+  font-size: 1.1rem !important;
+  margin-bottom: 6px;
+}
+
+.iziToast > .iziToast-body .iziToast-message {
+  font-size: 1.1rem !important;
+  font-weight: bold;
+}
+
 .login-contaner .logo {
   width: 150px;
 }

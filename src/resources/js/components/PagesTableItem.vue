@@ -45,6 +45,7 @@
 
 <script>
   import { mapActions } from 'vuex'
+  import { AlertManager } from './utils/AlertManager'
   
   export default {
     name: 'PagesTableItem',
@@ -72,7 +73,7 @@
           return false
         }
         
-        // Show tooltip.
+        AlertManager.success(response.message)
       },
     },
   }
