@@ -8,6 +8,7 @@
         <th class="px-4 py-2 font-medium border">Created at</th>
         <th class="px-4 py-2 font-medium border">Last updated at</th>
         <th class="px-4 py-2 font-medium border">Published at</th>
+        <th class="px-4 py-2 font-medium border">Set no-index</th>
         <th class="px-4 py-2 font-medium border">Options</th>
       </tr>
       </thead>

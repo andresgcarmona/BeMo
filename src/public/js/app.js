@@ -40,6 +40,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -94,6 +95,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'PagesTableItem',
   props: {
@@ -114,6 +127,27 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_PagesTable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/PagesTable */ "./resources/js/components/PagesTable.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -190,6 +224,10 @@ var staticRenderFns = [
         ]),
         _vm._v(" "),
         _c("th", { staticClass: "px-4 py-2 font-medium border" }, [
+          _vm._v("Set no-index")
+        ]),
+        _vm._v(" "),
+        _c("th", { staticClass: "px-4 py-2 font-medium border" }, [
           _vm._v("Options")
         ])
       ])
@@ -248,6 +286,26 @@ var render = function() {
       staticClass: "border px-4 py-2",
       domProps: { textContent: _vm._s(_vm.page.published_at) }
     }),
+    _vm._v(" "),
+    _c("td", { staticClass: "border px-4 py-2" }, [
+      _c("div", { staticClass: "custom-control custom-switch" }, [
+        _c("input", {
+          staticClass: "change-announcement-status custom-control-input",
+          attrs: {
+            type: "checkbox",
+            id: "switch_status_" + _vm.page.id,
+            "data-id": _vm.page.id,
+            "data-enabled": _vm.page.no_index
+          },
+          domProps: { checked: _vm.page.no_index }
+        }),
+        _vm._v(" "),
+        _c("label", {
+          staticClass: "custom-control-label",
+          attrs: { for: "switch_status_" + _vm.page.id }
+        })
+      ])
+    ]),
     _vm._v(" "),
     _c("td", { staticClass: "border px-4 py-2 text-center" }, [
       _c("div", { staticClass: "inline-flex" }, [
@@ -335,11 +393,85 @@ var render = function() {
   return _c(
     "div",
     { staticClass: "dashboard-container w-full" },
-    [_c("pages-table")],
+    [
+      _c("h2", { staticClass: "text-3xl\tfont-semibold text-gray-700 mb-8" }, [
+        _vm._v("Registered Pages")
+      ]),
+      _vm._v(" "),
+      _vm._m(0),
+      _vm._v(" "),
+      _c("pages-table")
+    ],
     1
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "w-full mb-4" }, [
+      _c("div", { staticClass: "sm:flex sm:justify-between mb-3" }, [
+        _c(
+          "a",
+          {
+            staticClass:
+              "block mb-3 sm:mb-0 border border-gray-600 p-3 font-medium text-sm font rounded hover:text-white hover:bg-gray-600 hover:border-gray-700 transition-colors duration-100",
+            attrs: { href: "/page/register" }
+          },
+          [
+            _c("i", {
+              staticClass: "fas fa-plus-circle",
+              attrs: { "aria-hidden": "true" }
+            }),
+            _vm._v(" Register a page")
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "form",
+          {
+            staticClass:
+              "flex flex-1 justify-end items-center text-right px-4 md:px-0",
+            attrs: {
+              method: "GET",
+              action: "http://portal.localhost:8020/admin/articles",
+              "accept-charset": "UTF-8"
+            }
+          },
+          [
+            _c("div", { staticClass: "block relative w-full" }, [
+              _c("input", {
+                staticClass:
+                  "transition-fast border border-gray-600 font-medium text-sm font rounded w-full lg:w-2/4 p-3 focus:border-blue-400 rounded focus:outline-none",
+                attrs: {
+                  placeholder: "Search pages in title and content",
+                  name: "s",
+                  type: "text"
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass:
+                    "absolute inset-y-0 right-0 flex items-center p-3 text-gray-700 focus:outline-none",
+                  attrs: { type: "submit" }
+                },
+                [
+                  _c("i", {
+                    staticClass: "fas fa-search",
+                    attrs: { "aria-hidden": "true" }
+                  })
+                ]
+              )
+            ])
+          ]
+        )
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -355,7 +487,43 @@ render._withStripped = true
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+var savePage = /*#__PURE__*/function () {
+  var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(_ref, payload) {
+    var commit;
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            commit = _ref.commit;
+
+            try {} catch (e) {
+              console.error(e);
+            }
+
+          case 2:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  }));
+
+  return function savePage(_x, _x2) {
+    return _ref2.apply(this, arguments);
+  };
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  savePage: savePage
+});
 
 /***/ }),
 

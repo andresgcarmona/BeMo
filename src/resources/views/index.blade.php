@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Instituto Nacional de Salud Pública')
+@section('title', 'BeMo Academic Consulting')
 
 @section('main')
     <header class="flex header fixed left-0 top-0 p-2 px-6 items-center w-full z-50">

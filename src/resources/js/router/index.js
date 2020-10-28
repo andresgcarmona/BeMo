@@ -4,7 +4,6 @@ import DashboardPage from '../pages/DashboardPage'
 
 Vue.use(VueRouter)
 
-
 const router = new VueRouter({
 	mode: 'history',
 	routes: [
@@ -12,7 +11,7 @@ const router = new VueRouter({
 			path: '/dashboard',
 			name: 'dashboard',
 			component: DashboardPage,
-		}
+		},
 	]
 })
 
