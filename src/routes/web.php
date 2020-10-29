@@ -4,6 +4,7 @@
     use App\Http\Controllers\IndexController;
     use App\Http\Controllers\RegisterPageController;
     use App\Http\Controllers\SavePageController;
+    use App\Http\Controllers\SendContactFormController;
     use App\Http\Controllers\ShowContactFormController;
     use App\Http\Controllers\ShowPageController;
     use Illuminate\Support\Facades\Route;
@@ -14,7 +15,7 @@
 
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('contact', ShowContactFormController::class)->name('contact');
-    Route::post('contact', ShowContactFormController::class)->name('contact.send');
+    Route::post('contact', SendContactFormController::class)->name('contact.send');
 
     /**
      * Pages routes.
