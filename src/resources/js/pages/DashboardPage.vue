@@ -1,5 +1,16 @@
 <template>
   <div class="dashboard-container w-full">
+    <div class="w-full mb-10 flex justify-end">
+      <form method="post"
+            action="/logout">
+        <input type="hidden" name="_token" :value="csrfToken">
+        <button type="submit"
+                class="appearance-none block mb-3 mr-2 sm:mb-0 border border-gray-600 p-3 font-medium text-sm font rounded hover:text-white hover:bg-gray-600 hover:border-gray-700 transition-colors duration-100">
+          <i class="fas fa-sign-out-alt inline-block mr-2"></i> Log out
+        </button>
+      </form>
+    </div>
+    
     <div class="w-full">
       <h2 class="text-3xl	font-semibold text-gray-700 mb-8">Global Settings</h2>
       
@@ -108,6 +119,7 @@
     methods: {
       ...mapActions({
         saveSettings: 'updateSettings',
+        csrfToken: null,
       }),
       
       async updateSettings() {
@@ -125,5 +137,8 @@
         AlertManager.success(response.message)
       },
     },
+    mounted() {
+      this.csrfToken = document.head.querySelector('meta[name="csrf-token"]').content
+    }
   }
 </script>

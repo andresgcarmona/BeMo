@@ -2122,6 +2122,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2137,7 +2148,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   },
   computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_2__["mapGetters"])(['settings'])),
   methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_2__["mapActions"])({
-    saveSettings: 'updateSettings'
+    saveSettings: 'updateSettings',
+    csrfToken: null
   })), {}, {
     updateSettings: function updateSettings() {
       var _this = this;
@@ -2175,7 +2187,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         }, _callee);
       }))();
     }
-  })
+  }),
+  mounted: function mounted() {
+    this.csrfToken = document.head.querySelector('meta[name="csrf-token"]').content;
+  }
 });
 
 /***/ }),
@@ -15821,6 +15836,17 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "dashboard-container w-full" }, [
+    _c("div", { staticClass: "w-full mb-10 flex justify-end" }, [
+      _c("form", { attrs: { method: "post", action: "/logout" } }, [
+        _c("input", {
+          attrs: { type: "hidden", name: "_token" },
+          domProps: { value: _vm.csrfToken }
+        }),
+        _vm._v(" "),
+        _vm._m(0)
+      ])
+    ]),
+    _vm._v(" "),
     _c("div", { staticClass: "w-full" }, [
       _c("h2", { staticClass: "text-3xl\tfont-semibold text-gray-700 mb-8" }, [
         _vm._v("Global Settings")
@@ -15986,7 +16012,7 @@ var render = function() {
           [_vm._v("Registered Pages")]
         ),
         _vm._v(" "),
-        _vm._m(0),
+        _vm._m(1),
         _vm._v(" "),
         _c("pages-table")
       ],
@@ -15995,6 +16021,23 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass:
+          "appearance-none block mb-3 mr-2 sm:mb-0 border border-gray-600 p-3 font-medium text-sm font rounded hover:text-white hover:bg-gray-600 hover:border-gray-700 transition-colors duration-100",
+        attrs: { type: "submit" }
+      },
+      [
+        _c("i", { staticClass: "fas fa-sign-out-alt inline-block mr-2" }),
+        _vm._v(" Log out\n      ")
+      ]
+    )
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
